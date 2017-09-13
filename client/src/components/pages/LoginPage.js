@@ -14,7 +14,7 @@ class LoginPage extends Component {
           } else {
               this.props.history.push("/");
           }
-      });
+      }).catch(err => this.setState({ serverError: err.response.statusText }));
     };
 
     render(){
