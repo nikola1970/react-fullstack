@@ -5,7 +5,7 @@ import App from './App';
 
 import { userLoggedIn } from "./actions/auth.actions";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux"
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -26,7 +26,7 @@ if (localStorage.reactJWT) {
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App />
+            <Route component={App} />
         </Provider>
     </BrowserRouter>
     , document.getElementById('root'));
